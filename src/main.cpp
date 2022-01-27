@@ -42,11 +42,11 @@ void loop()
     Data_In = Serial.readStringUntil('#');
     panIn = Data_In.substring(0, Data_In.indexOf("-"));
     tiltIn = Data_In.substring(Data_In.indexOf("-") + 1, Data_In.indexOf("#"));
-    if (panIn =+ "off")
+    if (panIn == "off")
     {
       isOn = false;
     }
-    else if (panIn =+ "on")
+    else if (panIn == "on")
     {
       isOn = true;
     }
