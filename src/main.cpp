@@ -20,6 +20,8 @@ String Data_In = "";
 String panIn = "";
 String tiltIn = "";
 
+bool isOn = true;
+
 //################### FUNCTIONDECLAREATIONS ###############
 void move(float pan, float tilt);
 
@@ -40,15 +42,26 @@ void loop()
     Data_In = Serial.readStringUntil('#');
     panIn = Data_In.substring(0, Data_In.indexOf("-"));
     tiltIn = Data_In.substring(Data_In.indexOf("-") + 1, Data_In.indexOf("#"));
-    float convertp = panIn.toFloat();
-    float convertt = tiltIn.toFloat();
-    if (convertp > 0.00)
+    if (panIn = "off")
     {
-      panPos = convertp;
+      isOn = false;
     }
-    if (convertt > 0.00)
+    else if (panIn = "on")
     {
-      tiltPos = convertt;
+      isOn = true;
+    }
+    else
+    {
+      float convertp = panIn.toFloat();
+      float convertt = tiltIn.toFloat();
+      if (convertp > 0.00)
+      {
+        panPos = convertp;
+      }
+      if (convertt > 0.00)
+      {
+        tiltPos = convertt;
+      }
     }
   }
 
