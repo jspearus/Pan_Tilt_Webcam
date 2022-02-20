@@ -45,10 +45,14 @@ void loop()
     if (panIn == "off")
     {
       isOn = false;
+      panServo.detach();
+      tiltServo.detach();
     }
     else if (panIn == "on")
     {
       isOn = true;
+      panServo.attach(panPin);
+      tiltServo.attach(tiltPin);
     }
     else
     {
