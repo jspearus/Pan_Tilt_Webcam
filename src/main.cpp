@@ -40,6 +40,11 @@ void loop()
   if (Serial.available() > 0)
   {
     Data_In = Serial.readStringUntil('#');
+    if (Data_In == "whoRu")
+    {
+
+      Serial.println("mastCam-#");
+    }
     panIn = Data_In.substring(0, Data_In.indexOf("-"));
     tiltIn = Data_In.substring(Data_In.indexOf("-") + 1, Data_In.indexOf("#"));
     if (panIn == "off")
@@ -74,7 +79,8 @@ void loop()
 
   panPosPre = panPosSmoothed;
   tiltPosPre = tiltPosSmoothed;
-  if (isOn == true){
+  if (isOn == true)
+  {
     move(panPosSmoothed, tiltPosPre);
   }
   delay(5);
