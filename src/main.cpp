@@ -5,8 +5,8 @@ Servo panServo;  // create servo object to control a servo
 Servo tiltServo; // twelve servo objects can be created on most boards
 
 //################# PIN DEFINITIONS ########################
-const int panPin = 6;
-const int tiltPin = 5;
+const int panPin = 9;
+const int tiltPin = 10;
 
 //############################ VARIABLES ########################################
 float panPos = 1000.0;          // variable to store the servo position
