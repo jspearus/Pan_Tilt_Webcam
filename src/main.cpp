@@ -9,10 +9,10 @@ const int panPin = 9;
 const int tiltPin = 10;
 
 //############################ VARIABLES ########################################
-float panPos = 1000.0;          // variable to store the servo position
-float tiltPos = 1000.0;         // variable to store the servo position
-float panPosSmoothed = 1000.0;  // variable to store the servo position
-float tiltPosSmoothed = 1000.0; // variable to store the servo position
+float panPos = 1400.0;          // variable to store the servo position
+float tiltPos = 1500.0;         // variable to store the servo position
+float panPosSmoothed = 1400.0;  // variable to store the servo position
+float tiltPosSmoothed = 1500.0; // variable to store the servo position
 float panPosPre;                // variable to store the servo position
 float tiltPosPre;               // variable to store the servo position
 
@@ -74,8 +74,8 @@ void loop()
     }
   }
 
-  panPosSmoothed = (panPos * 0.02) + (panPosPre * 0.98);
-  tiltPosSmoothed = (tiltPos * 0.02) + (tiltPosPre * 0.98);
+  panPosSmoothed = (panPos * 0.1) + (panPosPre * 0.9);
+  tiltPosSmoothed = (tiltPos * 0.1) + (tiltPosPre * 0.9);
 
   panPosPre = panPosSmoothed;
   tiltPosPre = tiltPosSmoothed;
